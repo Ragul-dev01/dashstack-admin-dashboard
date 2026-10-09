@@ -165,6 +165,7 @@ function Dashboard() {
               </linearGradient>
             </defs>
 
+            {/* Sales Line */}
             <path
               d="
                 M0 190
@@ -218,6 +219,7 @@ function Dashboard() {
               strokeWidth="2.5"
             />
 
+            {/* Sales Area */}
             <path
               d="
                 M0 190
@@ -301,7 +303,6 @@ function Dashboard() {
 
       {/* ================= DEALS DETAILS ================= */}
       <div className="rounded-xl bg-white p-5 shadow-sm">
-
         <div className="mb-5 flex items-center justify-between">
           <h2 className="text-lg font-semibold text-gray-800">
             Deals Details
@@ -315,7 +316,6 @@ function Dashboard() {
         {/* Desktop Table */}
         <div className="hidden overflow-x-auto md:block">
           <table className="w-full text-left text-xs">
-
             <thead>
               <tr className="rounded-lg bg-[#f4f6fa] text-gray-500">
                 <th className="px-4 py-3">Product Name</th>
@@ -328,12 +328,9 @@ function Dashboard() {
             </thead>
 
             <tbody>
-              {/* Apple Watch */}
               <tr className="border-b border-gray-100">
-
                 <td className="px-4 py-4">
                   <div className="flex items-center gap-3">
-
                     <img
                       src="/src/assets/applewatch.png"
                       alt="Apple Watch"
@@ -343,7 +340,6 @@ function Dashboard() {
                     <span className="font-medium text-gray-700">
                       Apple Watch
                     </span>
-
                   </div>
                 </td>
 
@@ -368,7 +364,6 @@ function Dashboard() {
                     Delivered
                   </span>
                 </td>
-
               </tr>
             </tbody>
           </table>
@@ -376,11 +371,8 @@ function Dashboard() {
 
         {/* Mobile */}
         <div className="space-y-3 md:hidden">
-
           <div className="rounded-lg border border-gray-100 p-4">
-
             <div className="flex items-center gap-3">
-
               <img
                 src="/src/assets/applewatch.png"
                 alt="Apple Watch"
@@ -390,7 +382,6 @@ function Dashboard() {
               <p className="font-medium text-gray-800">
                 Apple Watch
               </p>
-
             </div>
 
             <p className="mt-2 text-xs text-gray-500">
@@ -409,15 +400,12 @@ function Dashboard() {
             <span className="mt-3 inline-block rounded-full bg-[#d8f7eb] px-3 py-1 text-[10px] text-[#18a978]">
               Delivered
             </span>
-
           </div>
-
         </div>
       </div>
 
       {/* ================= REVENUE ================= */}
       <div className="rounded-xl bg-white p-5 shadow-sm">
-
         <div className="mb-5 flex items-center justify-between">
           <h2 className="text-lg font-semibold text-gray-800">
             Revenue
@@ -430,8 +418,8 @@ function Dashboard() {
 
         <div className="relative h-[260px] overflow-hidden">
 
+          {/* Grid */}
           <div className="absolute inset-0 flex flex-col justify-between">
-
             {[100, 80, 60, 40, 20].map((item) => (
               <div
                 key={item}
@@ -444,15 +432,14 @@ function Dashboard() {
                 <div className="h-px flex-1 bg-gray-100" />
               </div>
             ))}
-
           </div>
 
+          {/* Revenue Graph */}
           <svg
             viewBox="0 0 1000 250"
             className="absolute left-8 top-0 h-full w-[calc(100%-32px)]"
             preserveAspectRatio="none"
           >
-
             {/* Purple */}
             <path
               d="
@@ -496,12 +483,10 @@ function Dashboard() {
               fill="#ff9877"
               opacity="0.85"
             />
-
           </svg>
         </div>
 
         <div className="mt-3 flex justify-center gap-8 text-xs text-gray-500">
-
           <span className="flex items-center gap-2">
             <span className="h-2 w-2 rounded-full bg-[#ff9877]" />
             Sales
@@ -511,7 +496,6 @@ function Dashboard() {
             <span className="h-2 w-2 rounded-full bg-[#d5a5ff]" />
             Profit
           </span>
-
         </div>
       </div>
 
@@ -520,15 +504,12 @@ function Dashboard() {
 
         {/* Customers */}
         <div className="rounded-xl bg-white p-5 shadow-sm">
-
           <h2 className="text-base font-semibold text-gray-800">
             Customers
           </h2>
 
           <div className="flex justify-center py-5">
-
             <div className="relative h-32 w-32">
-
               <div
                 className="h-full w-full rounded-full"
                 style={{
@@ -538,13 +519,10 @@ function Dashboard() {
               />
 
               <div className="absolute inset-4 rounded-full bg-white" />
-
             </div>
-
           </div>
 
           <div className="grid grid-cols-2 text-center">
-
             <div>
               <p className="text-xl font-semibold text-gray-800">
                 34,249
@@ -564,25 +542,21 @@ function Dashboard() {
                 🔵 Repeated
               </p>
             </div>
-
           </div>
         </div>
 
         {/* Featured Product */}
         <div className="rounded-xl bg-white p-5 shadow-sm">
-
           <h2 className="text-base font-semibold text-gray-800">
             Featured Product
           </h2>
 
           <div className="relative flex h-[200px] items-center justify-center">
-
             <button className="absolute left-0 rounded-full bg-gray-100 px-2 py-1 text-gray-500">
               ‹
             </button>
 
             <div className="text-center">
-
               <img
                 src="/src/assets/hero.png"
                 alt="Beats Headphone"
@@ -596,31 +570,26 @@ function Dashboard() {
               <p className="mt-1 text-xs font-medium text-blue-500">
                 $89.00
               </p>
-
             </div>
 
             <button className="absolute right-0 rounded-full bg-gray-100 px-2 py-1 text-gray-500">
               ›
             </button>
-
           </div>
         </div>
 
         {/* Sales Analytics */}
         <div className="rounded-xl bg-white p-5 shadow-sm">
-
           <h2 className="text-base font-semibold text-gray-800">
             Sales Analytics
           </h2>
 
           <div className="mt-5 h-[190px]">
-
             <svg
               viewBox="0 0 500 220"
               className="h-full w-full"
               preserveAspectRatio="none"
             >
-
               {[50, 90, 130, 170].map((y) => (
                 <line
                   key={y}
@@ -632,6 +601,7 @@ function Dashboard() {
                 />
               ))}
 
+              {/* Blue Line */}
               <path
                 d="
                   M35 175
@@ -647,6 +617,7 @@ function Dashboard() {
                 strokeWidth="3"
               />
 
+              {/* Green Line */}
               <path
                 d="
                   M35 195
@@ -661,7 +632,6 @@ function Dashboard() {
                 stroke="#16b89a"
                 strokeWidth="3"
               />
-
             </svg>
 
             <div className="flex justify-between px-5 text-[9px] text-gray-400">
@@ -671,10 +641,8 @@ function Dashboard() {
               <span>2018</span>
               <span>2019</span>
             </div>
-
           </div>
         </div>
-
       </div>
     </div>
   );

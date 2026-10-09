@@ -46,6 +46,11 @@ const mainMenu = [
     icon: ClipboardList,
     path: "/orders",
   },
+  {
+    name: "Product Stock",
+    icon: Boxes,
+    path: "/product-stock",
+  },
 ];
 
 const pagesMenu = [
@@ -151,32 +156,6 @@ function Sidebar({ isOpen, setIsOpen }) {
           {/* Main Menu */}
           <div className="space-y-1">
             {mainMenu.map(renderMenuItem)}
-
-            {/* =================================================
-                PRODUCT STOCK
-                Temporarily disabled until Product Stock page
-                is implemented.
-            ================================================= */}
-            <div
-              className="
-                flex
-                w-full
-                cursor-default
-                items-center
-                gap-4
-                rounded-md
-                px-4
-                py-3
-                text-sm
-                font-medium
-                text-gray-600
-              "
-              aria-disabled="true"
-            >
-              <Boxes size={18} strokeWidth={1.8} />
-
-              <span>Product Stock</span>
-            </div>
           </div>
 
           {/* Pages */}
@@ -213,20 +192,7 @@ function Sidebar({ isOpen, setIsOpen }) {
           {/* Logout */}
           <button
             type="button"
-            className="
-              flex
-              w-full
-              items-center
-              gap-4
-              rounded-md
-              px-4
-              py-3
-              text-sm
-              font-medium
-              text-gray-600
-              transition
-              hover:bg-gray-100
-            "
+            className="flex w-full items-center gap-4 rounded-md px-4 py-3 text-sm font-medium text-gray-600 transition hover:bg-gray-100"
           >
             <LogOut size={18} strokeWidth={1.8} />
 
