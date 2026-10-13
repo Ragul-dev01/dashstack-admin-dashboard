@@ -16,7 +16,8 @@ function Login() {
       return;
     }
 
-    navigate("/");
+    // Navigate to Dashboard after Sign In
+    navigate("/dashboard");
   };
 
   return (
@@ -24,8 +25,11 @@ function Login() {
       <div className="relative flex min-h-[650px] w-full max-w-[1440px] items-center justify-center overflow-hidden bg-[#5283f8]">
         {/* Background Shapes */}
         <div className="pointer-events-none absolute -left-20 top-[30%] h-[220px] w-[430px] -rotate-[25deg] rounded-[100px] bg-[#4779f4] opacity-80" />
+
         <div className="pointer-events-none absolute -right-24 top-[10%] h-[250px] w-[500px] rotate-[25deg] rounded-[100px] bg-[#4779f4] opacity-70" />
+
         <div className="pointer-events-none absolute -bottom-32 left-[25%] h-[380px] w-[260px] rotate-[15deg] rounded-[100px] bg-[#4779f4] opacity-80" />
+
         <div className="pointer-events-none absolute bottom-10 right-[10%] h-[260px] w-[420px] -rotate-[20deg] rounded-[100px] bg-[#4779f4] opacity-70" />
 
         {/* Login Card */}
@@ -39,6 +43,7 @@ function Login() {
           </p>
 
           <form onSubmit={handleSubmit} className="mt-7">
+            {/* Email */}
             <div>
               <label
                 htmlFor="login-email"
@@ -59,6 +64,7 @@ function Login() {
               />
             </div>
 
+            {/* Password */}
             <div className="mt-6">
               <div className="flex items-center justify-between gap-2">
                 <label
@@ -71,7 +77,9 @@ function Login() {
                 <button
                   type="button"
                   onClick={() =>
-                    window.alert("Please contact the administrator to reset your password.")
+                    window.alert(
+                      "Please contact the administrator to reset your password."
+                    )
                   }
                   className="text-[10px] text-[#777777] hover:text-[#5283f8]"
                 >
@@ -91,6 +99,7 @@ function Login() {
               />
             </div>
 
+            {/* Remember Password */}
             <label className="mt-3 flex w-fit cursor-pointer items-center gap-2 text-[10px] text-[#777777]">
               <input
                 type="checkbox"
@@ -98,9 +107,11 @@ function Login() {
                 onChange={(event) => setRemember(event.target.checked)}
                 className="h-[14px] w-[14px] accent-[#5283f8]"
               />
+
               Remember Password
             </label>
 
+            {/* Sign In */}
             <button
               type="submit"
               className="mt-8 h-[33px] w-full rounded-[5px] bg-[#5b8def] text-[11px] font-medium text-white transition hover:bg-[#477ce5]"
@@ -109,6 +120,7 @@ function Login() {
             </button>
           </form>
 
+          {/* Create Account */}
           <p className="mt-3 text-center text-[10px] text-[#777777]">
             Don&apos;t have an account?{" "}
             <button

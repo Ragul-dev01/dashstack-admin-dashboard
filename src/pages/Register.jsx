@@ -12,17 +12,18 @@ function Register() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (!acceptTerms) {
-      window.alert("Please accept the terms and conditions.");
-      return;
-    }
-
     if (!email.trim() || !username.trim() || !password.trim()) {
       window.alert("Please fill in all required fields.");
       return;
     }
 
-    navigate("/404");
+    if (!acceptTerms) {
+      window.alert("Please accept the terms and conditions.");
+      return;
+    }
+
+    // Navigate to Login page after Sign Up
+    navigate("/login");
   };
 
   return (
@@ -44,7 +45,7 @@ function Register() {
           </h1>
 
           <p className="mt-2 text-center text-[11px] text-[#666666]">
-            Create an account to continue
+            Create a account to continue
           </p>
 
           <form onSubmit={handleSubmit} className="mt-7">

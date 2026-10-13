@@ -28,6 +28,7 @@ import UIElements from "./pages/UIElements";
 import Team from "./pages/Team";
 import Table from "./pages/Table";
 import Settings from "./pages/Settings";
+
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFoundPage";
@@ -42,6 +43,7 @@ function AppLayout() {
 
   const isNotFoundPage = location.pathname === "/404";
 
+  // Login and Register pages
   if (isAuthPage) {
     return (
       <Routes>
@@ -55,6 +57,7 @@ function AppLayout() {
     );
   }
 
+  // 404 page without Sidebar and Header
   if (isNotFoundPage) {
     return (
       <Routes>
@@ -67,6 +70,7 @@ function AppLayout() {
     );
   }
 
+  // Dashboard and all other pages
   return (
     <div className="min-h-screen bg-[#f5f6fa]">
       <Sidebar
@@ -79,42 +83,59 @@ function AppLayout() {
 
         <main className="p-5 sm:p-7">
           <Routes>
+            {/* Default page */}
             <Route
               path="/"
               element={<Navigate to="/login" replace />}
             />
 
-            <Route path="/dashboard" element={<Dashboard />} />
+            {/* Dashboard */}
+            <Route
+              path="/dashboard"
+              element={<Dashboard />}
+            />
+
+            {/* Main pages */}
             <Route path="/products" element={<Products />} />
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/inbox" element={<Inbox />} />
             <Route path="/starred" element={<Starred />} />
+
             <Route
               path="/inbox/:id"
               element={<EmailDetails />}
             />
+
             <Route path="/orders" element={<OrderLists />} />
+
             <Route
               path="/product-stock"
               element={<ProductStock />}
             />
+
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/todo" element={<ToDo />} />
+
             <Route path="/contact" element={<Contact />} />
+
             <Route
               path="/contact/add"
               element={<AddContact />}
             />
+
             <Route path="/invoice" element={<Invoice />} />
+
             <Route
               path="/ui-elements"
               element={<UIElements />}
             />
+
             <Route path="/team" element={<Team />} />
             <Route path="/table" element={<Table />} />
             <Route path="/settings" element={<Settings />} />
 
+            {/* Any incorrect URL redirects to 404 */}
             <Route
               path="*"
               element={<Navigate to="/404" replace />}
