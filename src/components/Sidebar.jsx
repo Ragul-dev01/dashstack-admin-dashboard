@@ -18,13 +18,13 @@ import {
   X,
 } from "lucide-react";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const mainMenu = [
   {
     name: "Dashboard",
     icon: LayoutDashboard,
-    path: "/",
+    path: "/dashboard",
   },
   {
     name: "Products",
@@ -97,6 +97,8 @@ const pagesMenu = [
 ];
 
 function Sidebar({ isOpen, setIsOpen }) {
+  const navigate = useNavigate();
+
   const renderMenuItem = (item) => {
     const Icon = item.icon;
 
@@ -114,10 +116,14 @@ function Sidebar({ isOpen, setIsOpen }) {
         }
       >
         <Icon size={18} strokeWidth={1.8} />
-
         <span>{item.name}</span>
       </NavLink>
     );
+  };
+
+  const handleLogout = () => {
+    navigate("/login");
+    setIsOpen(false);
   };
 
   return (
@@ -146,6 +152,7 @@ function Sidebar({ isOpen, setIsOpen }) {
             type="button"
             onClick={() => setIsOpen(false)}
             className="rounded-lg p-2 text-gray-500 hover:bg-gray-100 lg:hidden"
+            aria-label="Close sidebar"
           >
             <X size={20} />
           </button>
@@ -185,17 +192,16 @@ function Sidebar({ isOpen, setIsOpen }) {
             }
           >
             <Settings size={18} strokeWidth={1.8} />
-
             <span>Settings</span>
           </NavLink>
 
           {/* Logout */}
           <button
             type="button"
+            onClick={handleLogout}
             className="flex w-full items-center gap-4 rounded-md px-4 py-3 text-sm font-medium text-gray-600 transition hover:bg-gray-100"
           >
             <LogOut size={18} strokeWidth={1.8} />
-
             <span>Logout</span>
           </button>
         </div>
